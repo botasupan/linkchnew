@@ -40,7 +40,7 @@ async def start_command(client: Client, message: Message):
                 ids = [int(int(argument[1]) / abs(client.db_channel.id))]
             except:
                 return
-        temp_msg = await message.reply("Sabar ya...")
+        temp_msg = await message.reply("Harap Bersabar...")
         try:
             messages = await get_messages(client, ids)
         except:
@@ -73,11 +73,9 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🔥 ᴏᴘᴇɴ", callback_data = "about"),
-                    InlineKeyboardButton("🔒 ᴄʟᴏsᴇ", callback_data = "close")
-                ],[
-                    InlineKeyboardButton("ᴠɪᴅᴇᴏ ᴠɪʀᴀʟ", url="https://t.me/asupanindoviraals")
-                  ]
+                    InlineKeyboardButton("🔑 𝗢𝗣𝗘𝗡", callback_data = "about"),
+                    InlineKeyboardButton("🔒 𝗖𝗟𝗢𝗦𝗘", callback_data = "close")
+                ]
             ]
         )
         await message.reply_text(
@@ -96,14 +94,14 @@ async def start_command(client: Client, message: Message):
 
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
-    text = "<b>AKSES ANDA DI TOLAK !!\nWajib join channel/group dibawah ini agar akses diterima\n\nJoin Klik Di Bawah Ini</b>"
+    text = "<b>WAJIB BERGABUNG ke Channel/GROUP terlebih dahulu, supaya Anda dapat mengakses File nya. Setelah BERGABUNG kembali ke Bot ini</b>"
     message_text = message.text
     try:
         command, argument = message_text.split()
-        text = text + f" <b>dan <a href='https://t.me/{client.username}?start={argument}'>coba lagi</a></b>"
+        text = text + f" <b>dan KLIK<a href='https://t.me/{client.username}?start={argument}'>LIHAT VIDEO DISINI</a></b>"
     except ValueError:
         pass
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Join Channel", url = client.invitelink)]])
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("GABUNG DULU DISINI", url = client.invitelink)]])
     await message.reply(
         text = text,
         reply_markup = reply_markup,
