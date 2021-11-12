@@ -94,7 +94,7 @@ async def start_command(client: Client, message: Message):
 
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
-    text = "<b>WAJIB BERGABUNG ke Channel/GROUP terlebih dahulu, supaya Anda dapat mengakses File nya. Setelah BERGABUNG kembali ke Bot ini</b>"
+    text = "<b>WAJIB BERGABUNG ke Channel/GROUP terlebih dahulu, supaya Anda dapat mengakses Video nya.\n\nSetelah BERGABUNG, kemudian kembali ke Bot ini</b>"
     message_text = message.text
     try:
         command, argument = message_text.split()
