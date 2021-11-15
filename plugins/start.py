@@ -98,10 +98,10 @@ async def not_joined(client: Client, message: Message):
     message_text = message.text
     try:
         command, argument = message_text.split()
-        text = text + f" <b>dan KLIK <a href='https://t.me/{client.username}?start={argument}'>LIHAT VIDEO DISINI</a></b>"
+        text = text + f" <b>dan KLIK <a href='https://t.me/{client.username}?start={argument}'>LIHAT VIDEO DISINI</a>\nKemudian Klik MULAI di bawah</b>"
     except ValueError:
         pass
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("GABUNG DULU DISINI", url = client.invitelink)]])
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("WAJIB GABUNG DULU DISINI", url = client.invitelink)]])
     await message.reply(
         text = text,
         reply_markup = reply_markup,
