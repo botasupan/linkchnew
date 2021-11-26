@@ -73,8 +73,8 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🔑 𝗢𝗣𝗘𝗡", callback_data = "about"),
-                    InlineKeyboardButton("🔒 𝗖𝗟𝗢𝗦𝗘", callback_data = "close")
+                    InlineKeyboardButton("𝐂𝐑𝐄𝐀𝐓𝐎𝐑", url="https://t.me/imbbyichi")
+                  
                 ]
             ]
         )
@@ -98,10 +98,10 @@ async def not_joined(client: Client, message: Message):
     message_text = message.text
     try:
         command, argument = message_text.split()
-        text = text + f" <b>dan KLIK <a href='https://t.me/{client.username}?start={argument}'>LIHAT VIDEO DISINI</a>\nKemudian Klik MULAI di bawah</b>"
+        text = text + f" <b>dan KLIK <a href='https://t.me/{client.username}?start={argument}'>LIHAT VIDEO DISINI</a>\nKemudian Klik MULAI lagi</b>"
     except ValueError:
         pass
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("WAJIB GABUNG DULU DISINI", url = client.invitelink)]])
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("⚠️ WAJIB GABUNG DULU DISINI ⚠️", url = client.invitelink)]])
     await message.reply(
         text = text,
         reply_markup = reply_markup,
